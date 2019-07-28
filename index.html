@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Apple</title>      
+    <link rel="stylesheet" href="css/style.css">  
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+</head>
+<body>
+    <header>
+        <div class="head-inner">
+            <div class="logo">
+                <a href="">
+                    <img src="/img/logo.svg">
+                </a>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="">Mac</a>
+                </li>
+                <li>
+                    <a href="">iPad</a>
+                </li>
+                <li>
+                    <a href="">iPhone</a>
+                </li>
+                <li>
+                    <a href="">Watch</a>
+                </li>
+                <li>
+                    <a href="">TV</a>
+                </li>
+                <li>
+                    <a href="">Music</a>
+                </li>
+                <li>
+                    <a href="">Support</a>
+                </li>
+            </ul>
+            <div class="search">
+                <button class="btn--search">
+                    <img src="/img/search.svg">
+                </button>
+                <div class="search-inner">
+                    <input type="text" placeholder="Search apple.com" name="search">
+                    <button class="btn--search-close">X</button>
+                    <div class="mask">
+                        <div class="quick-links">
+                            <h2>QUICK LINKS</h2>
+                            <ul>
+                                <li>
+                                    <a href="">Find a Store</a>
+                                </li>
+                                <li>
+                                    <a href="">Today at Apple</a>
+                                </li>
+                                <li>
+                                    <a href="">Accessories</a>
+                                </li>
+                                <li>
+                                    <a href="">AirPods</a>
+                                </li>
+                                <li>
+                                    <a href="">iPod</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="bag">
+                <button class="btn--bag">
+                    <img src="/img//bag.svg">
+                </button> 
+                <div class="bag-list--arrow"></div>
+                <div class="bag-list">
+                    <p>Your Bag is empty</p>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="/img/bag--bag.svg">
+                                <p>Bag</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/img/bag--favorites.svg">
+                                <p>Favorites</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/img/bag--orders.svg">
+                                <p>Orders</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/img/bag--account.svg">
+                                <p>Account</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="/img/bag--sign-in.svg">
+                                <p>Sign in</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>  
+<script>
+$('.btn--bag').click(function(){
+  $('.bag-list').toggle();
+});  
+    
+$('.btn--search').click(function(){
+  $('.search-inner, .search-inner .mask').fadeIn(500); 
+  $('.menu li, .btn--bag, .btn--search').addClass('animation'); 
+  $('.menu li, .btn--bag, .btn--search').removeClass('animation2'); 
+  $('.search-inner input, .btn--search-close').show().animate({
+        opacity: 1, 
+        marginLeft: '0'
+      }, '250', 'linear', function() {
+  });
+  $('.quick-links').show();     
+});  
+    
+$('.btn--search-close, .search-inner .mask').click(function(){
+  $('.search-inner, .search-inner .mask').fadeOut(240); 
+  $('.menu li, .btn--bag, .btn--search').removeClass('animation'); 
+  $('.menu li, .btn--bag, .btn--search').addClass('animation2'); 
+}); 
+</script>
+</html>
